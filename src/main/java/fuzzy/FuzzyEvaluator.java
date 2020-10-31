@@ -49,6 +49,8 @@ public class FuzzyEvaluator {
         return fuzzyStats.getFanSpeed();
     }
 
+    public synchronized float getFanAcceleration() { return fuzzyStats.getFanAcceleration(); }
+
     public synchronized void printStats(){
         System.out.println("================ CURRENT STATS ================");
         System.out.println(fuzzyStats.toString());

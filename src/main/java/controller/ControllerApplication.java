@@ -28,7 +28,7 @@ public class ControllerApplication extends Application {
     }
 
     private void fuzzySetup(){
-        FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 100);
+        FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 100, 1);
         fuzzyEvaluator = new FuzzyEvaluator("src/main/resources/fuzzy_speed.fcl", fuzzyStats);
     }
 
@@ -61,9 +61,8 @@ public class ControllerApplication extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(rotationTime), (e) ->
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(rotationTime), (e) -> {
 //                new KeyValue(imageView.rotateProperty(), 360, Interpolator.LINEAR)
-                {
                     RotateTransition rotateTransition = new RotateTransition();
 
                     rotateTransition.setDuration(Duration.millis(rotationTime));
@@ -75,21 +74,23 @@ public class ControllerApplication extends Application {
 
                     fuzzyEvaluator.evaluate();
 
-                    angle = (int) fuzzyEvaluator.getFanSpeed() * rotationTime/100;
+                    int timeDelta = 1;
+
+                    angle = (int) fuzzyEvaluator.getFanSpeed() * timeDelta +
+                            (int) (fuzzyEvaluator.getFanAcceleration() * timeDelta * timeDelta) / 2;
                     fuzzyEvaluator.printStats();
 
                     thermometer.setLevel((int) fuzzyEvaluator.getTemperature());
                     humidity.setLevel((int) fuzzyEvaluator.getAirHumidity());
 
-                    System.out.println(angle);
+                    System.out.println("The fan turned " + angle + " degrees.");
                 }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
     }
 
-
-    //TODO: add thermomether ticks show air humidity
-
+    //TODO: add thermomether ticks and text labels
+    //TODO: add gauge
 
 }

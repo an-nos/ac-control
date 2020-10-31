@@ -13,10 +13,10 @@ public class FuzzyStats {
     private Iterator temperatureFlowIterator;
     private Iterator humidityFlowIterator;
 
-    public FuzzyStats(float temperatureLevel, float airHumidity, float fanSpeed){
+    public FuzzyStats(float temperatureLevel, float airHumidity, float fanSpeed, float timeDelta){
         this.temperatureLevel = temperatureLevel;
         this.airHumidity = airHumidity;
-        this.fan = new Fan(fanSpeed);
+        this.fan = new Fan(fanSpeed, timeDelta);
         this.temperatureFlowIterator = (new TemperatureFlow()).iterator();
         this.humidityFlowIterator = (new HumidityFlow()).iterator();
     }
