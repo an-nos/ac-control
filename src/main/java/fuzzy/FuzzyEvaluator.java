@@ -36,13 +36,14 @@ public class FuzzyEvaluator {
         fuzzyStats.setFanAcceleration(newAccValue);
         System.out.println("Recounted acceleration: " + newAccValue);
 
-        fuzzyStats.nextTemperature();
+        fuzzyStats.nextFlowParameters();
         fuzzyStats.recalculate();
-
 
     }
 
     public synchronized float getTemperature() { return fuzzyStats.getTemperatureLevel(); }
+
+    public synchronized float getAirHumidity() { return fuzzyStats.getAirHumidity(); }
 
     public synchronized float getFanSpeed(){
         return fuzzyStats.getFanSpeed();

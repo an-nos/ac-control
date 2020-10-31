@@ -1,5 +1,6 @@
 package fuzzy;
 
+import flows.HumidityFlow;
 import flows.TemperatureFlow;
 
 import java.util.Iterator;
@@ -10,12 +11,14 @@ public class FuzzyStats {
     private float airHumidity;
     private Fan fan;
     private Iterator temperatureFlowIterator;
+    private Iterator humidityFlowIterator;
 
     public FuzzyStats(float temperatureLevel, float airHumidity, float fanSpeed){
         this.temperatureLevel = temperatureLevel;
         this.airHumidity = airHumidity;
         this.fan = new Fan(fanSpeed);
         this.temperatureFlowIterator = (new TemperatureFlow()).iterator();
+        this.humidityFlowIterator = (new HumidityFlow()).iterator();
     }
 
 
@@ -47,8 +50,9 @@ public class FuzzyStats {
 
     public float getFanAcceleration() { return this.fan.getAcceleration(); }
 
-    public void nextTemperature(){
-        this.temperatureLevel = (Float) temperatureFlowIterator.next();
+    public void nextFlowParameters(){
+        this.temperatureLevel = (float) temperatureFlowIterator.next();
+        this.airHumidity = (float) humidityFlowIterator.next();
     }
 
     public void recalculate(){ this.fan.recalculateSpeed(); }

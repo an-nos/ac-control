@@ -10,22 +10,28 @@ import javafx.scene.shape.StrokeLineJoin;
 public class ThermometerVisualization {
 
     private Group thermometerGroup;
-    private int zeroTemperatureLevel;
+    private int zeroLevel;
     private Rectangle thermometerLevel;
+    private int xPos;
+    private int yPos;
+    private int multiplier = 1;
+    private Color color;
 
-
-    public ThermometerVisualization(){
+    public ThermometerVisualization(int xPos, int yPos, Color color){
         int circleRadius = 50;
         int rectangleHeight = 300;
-        zeroTemperatureLevel = 350;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        zeroLevel = circleRadius + rectangleHeight;
+        this.color = color;
 
         Circle circle = new Circle();
         circle.setRadius(circleRadius);
-        circle.setCenterX(600);
-        circle.setCenterY(400);
+        circle.setCenterX(xPos);
+        circle.setCenterY(yPos);
 
         Rectangle rectangle = new Rectangle(50, rectangleHeight);
-        rectangle.setX(575);
+        rectangle.setX(xPos - circleRadius/2);
         rectangle.setY(100);
 
         Shape thermometerShape = Shape.union(circle, rectangle);
@@ -38,16 +44,16 @@ public class ThermometerVisualization {
 
     private Rectangle createThermometerLevel(int circleRadius, int rectangleHeight, Shape thermometerShape){
         Rectangle thermometerLevel = new Rectangle(200, circleRadius + rectangleHeight);
-        thermometerLevel.setX(500);
-        thermometerLevel.setY(zeroTemperatureLevel);
-        thermometerLevel.setFill(Color.RED);
+        thermometerLevel.setX(xPos - 100);
+        thermometerLevel.setY(zeroLevel);
+        thermometerLevel.setFill(color);
         thermometerLevel.setClip(thermometerShape);
         return thermometerLevel;
     }
 
     private Shape createThermometerOutline(Circle thermometerCircle, Rectangle thermometerRectangle){
         Shape thermometerOutline = Shape.union(thermometerCircle, thermometerRectangle);
-        thermometerOutline.setStroke(Color.DARKGRAY);
+        thermometerOutline.setStroke(Color.web("0x2F2504"));
         thermometerOutline.setStrokeWidth(4);
         thermometerOutline.setFill(Color.TRANSPARENT);
         thermometerOutline.setStrokeLineJoin(StrokeLineJoin.BEVEL);
@@ -58,8 +64,12 @@ public class ThermometerVisualization {
         return thermometerGroup;
     }
 
-    public void setLevel(int temperature){
-        thermometerLevel.setY(zeroTemperatureLevel - temperature*5);
+    public void setMultiplier(int multiplier){
+        this.multiplier = multiplier;
+    }
+
+    public void setLevel(int level){
+        thermometerLevel.setY(zeroLevel - level * multiplier);
     }
 
 

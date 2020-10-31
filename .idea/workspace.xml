@@ -22,11 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="added thermometer and fixed acceleration">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ThermometerVisualization.java" afterDir="false" />
+    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="added packages + visualization refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/flows/FlowIterable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flows/HumidityFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flows/HumidityFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flows/TemperatureFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flows/TemperatureFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/visualization/ThermometerVisualization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visualization/ThermometerVisualization.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,13 +118,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java/controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/controller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -235,7 +240,7 @@
       <workItem from="1604088652257" duration="76000" />
       <workItem from="1604152180182" duration="1473000" />
       <workItem from="1604153667554" duration="3795000" />
-      <workItem from="1604162557070" duration="13897000" />
+      <workItem from="1604162557070" duration="18419000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1604152606508</created>
@@ -265,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604171193221</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added packages + visualization refactoring">
+      <created>1604179295911</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604179295911</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +299,8 @@
     <MESSAGE value="project classes" />
     <MESSAGE value="first commit" />
     <MESSAGE value="added thermometer and fixed acceleration" />
-    <option name="LAST_COMMIT_MESSAGE" value="added thermometer and fixed acceleration" />
+    <MESSAGE value="added packages + visualization refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="added packages + visualization refactoring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="132" width="1024" height="852" key="#Project_Structure" timestamp="1603458609631">
@@ -303,10 +316,10 @@
     </state>
     <state x="804" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604155564105" />
     <state x="804" y="262" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/72.29.1848.1051@72.29.1848.1051" timestamp="1603552854658" />
-    <state x="749" y="422" width="494" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603552767839">
+    <state x="749" y="422" width="494" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604179214211">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
-    <state x="749" y="422" width="494" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.29.1848.1051@72.29.1848.1051" timestamp="1603552767839" />
+    <state x="749" y="422" width="494" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.29.1848.1051@72.29.1848.1051" timestamp="1604179214211" />
     <state x="729" y="303" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603551421509">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
@@ -325,29 +338,29 @@
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
     <state x="751" y="229" width="480" height="654" key="Github.UntrackedFilesDialog/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604152514718" />
-    <state width="1802" height="152" key="GridCell.Tab.0.bottom" timestamp="1604179026846">
+    <state width="1802" height="136" key="GridCell.Tab.0.bottom" timestamp="1604183473284">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.bottom/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="152" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1604179026846" />
+    <state width="1802" height="136" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1604183473284" />
     <state width="1802" height="163" key="GridCell.Tab.0.bottom/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141879" />
-    <state width="1802" height="152" key="GridCell.Tab.0.center" timestamp="1604179026844">
+    <state width="1802" height="136" key="GridCell.Tab.0.center" timestamp="1604183473283">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.center/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="152" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1604179026844" />
+    <state width="1802" height="136" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1604183473283" />
     <state width="1802" height="163" key="GridCell.Tab.0.center/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="152" key="GridCell.Tab.0.left" timestamp="1604179026843">
+    <state width="1802" height="136" key="GridCell.Tab.0.left" timestamp="1604183473283">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.left/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="152" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1604179026843" />
+    <state width="1802" height="136" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1604183473283" />
     <state width="1802" height="163" key="GridCell.Tab.0.left/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="152" key="GridCell.Tab.0.right" timestamp="1604179026845">
+    <state width="1802" height="136" key="GridCell.Tab.0.right" timestamp="1604183473284">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.right/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="152" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1604179026845" />
+    <state width="1802" height="136" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1604183473284" />
     <state width="1802" height="163" key="GridCell.Tab.0.right/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
     <state width="1802" height="178" key="GridCell.Tab.1.bottom" timestamp="1604169181088">
       <screen x="72" y="29" width="1848" height="1051" />
@@ -373,11 +386,11 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="485" y="189" width="1022" height="737" key="SettingsEditor/72.29.1848.1051@72.29.1848.1051" timestamp="1604164678031" />
-    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604171200022">
+    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604179301934">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153815388" />
-    <state x="591" y="291" key="Vcs.Push.Dialog.v2/72.29.1848.1051@72.29.1848.1051" timestamp="1604171200022" />
+    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2/72.29.1848.1051@72.29.1848.1051" timestamp="1604179301934" />
     <state x="172" y="126" width="1648" height="854" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604153167579">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>

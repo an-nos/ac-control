@@ -44,7 +44,6 @@ public class ControllerApplication extends Application {
 
         ImageView imageView = new ImageView(image);
 
-
         imageView.setX(100);
         imageView.setY(100);
 
@@ -52,10 +51,11 @@ public class ControllerApplication extends Application {
         imageView.setFitWidth(300);
         imageView.setPreserveRatio(true);
 
-        ThermometerVisualization thermometer = new ThermometerVisualization();
+        ThermometerVisualization thermometer = new ThermometerVisualization(575, 400, Color.web("0xC42021"));
+        ThermometerVisualization humidity = new ThermometerVisualization(700, 400, Color.web("0x1C448E"));
 
-        Group root = new Group(imageView, thermometer.getThermometerGroup());
-        Scene scene = new Scene(root, 800, 600, Color.DIMGREY);
+        Group root = new Group(imageView, thermometer.getThermometerGroup(), humidity.getThermometerGroup());
+        Scene scene = new Scene(root, 800, 600, Color.web("0x6F8695"));
 
 
         primaryStage.setScene(scene);
@@ -79,6 +79,7 @@ public class ControllerApplication extends Application {
                     fuzzyEvaluator.printStats();
 
                     thermometer.setLevel((int) fuzzyEvaluator.getTemperature());
+                    humidity.setLevel((int) fuzzyEvaluator.getAirHumidity());
 
                     System.out.println(angle);
                 }));
