@@ -1,5 +1,7 @@
 package controller;
 
+import fuzzy.FuzzyEvaluator;
+import fuzzy.FuzzyStats;
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -7,12 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
-import javafx.scene.shape.StrokeLineJoin;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import visualization.ThermometerVisualization;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,7 +25,6 @@ public class ControllerApplication extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
     }
 
     private void fuzzySetup(){
@@ -54,39 +52,9 @@ public class ControllerApplication extends Application {
         imageView.setFitWidth(300);
         imageView.setPreserveRatio(true);
 
-        int circleRadius = 50;
+        ThermometerVisualization thermometer = new ThermometerVisualization();
 
-        Circle thermometerCircle = new Circle();
-        thermometerCircle.setRadius(circleRadius);
-        thermometerCircle.setCenterX(600);
-        thermometerCircle.setCenterY(400);
-
-
-        int rectangleHeight = 300;
-        Rectangle rectangle = new Rectangle(50, rectangleHeight);
-        rectangle.setX(575);
-        rectangle.setY(100);
-
-        Shape thermometer = Shape.union(thermometerCircle, rectangle);
-
-        Shape thermometerOutline = Shape.union(thermometerCircle, rectangle);
-        thermometerOutline.setStroke(Color.DARKGRAY);
-        thermometerOutline.setStrokeWidth(4);
-        thermometerOutline.setFill(Color.TRANSPARENT);
-        thermometerOutline.setStrokeLineJoin(StrokeLineJoin.BEVEL);
-
-
-        int zeroTemperatureLevel = 350;
-
-        Rectangle thermometerLevel = new Rectangle(200, circleRadius + rectangleHeight);
-        thermometerLevel.setX(500);
-        thermometerLevel.setY(zeroTemperatureLevel);
-        thermometerLevel.setFill(Color.RED);
-        thermometerLevel.setClip(thermometer);
-
-
-
-        Group root = new Group(imageView, thermometerLevel, thermometerOutline);
+        Group root = new Group(imageView, thermometer.getThermometerGroup());
         Scene scene = new Scene(root, 800, 600, Color.DIMGREY);
 
 
@@ -110,7 +78,7 @@ public class ControllerApplication extends Application {
                     angle = (int) fuzzyEvaluator.getFanSpeed() * rotationTime/100;
                     fuzzyEvaluator.printStats();
 
-                    thermometerLevel.setY(zeroTemperatureLevel - fuzzyEvaluator.getTemperature()*5);
+                    thermometer.setLevel((int) fuzzyEvaluator.getTemperature());
 
                     System.out.println(angle);
                 }));
@@ -120,7 +88,7 @@ public class ControllerApplication extends Application {
     }
 
 
-    //TODO: add thermometer and show air humidity
+    //TODO: add thermomether ticks show air humidity
 
 
 }

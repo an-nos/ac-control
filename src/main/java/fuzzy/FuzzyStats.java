@@ -1,4 +1,6 @@
-package controller;
+package fuzzy;
+
+import flows.TemperatureFlow;
 
 import java.util.Iterator;
 

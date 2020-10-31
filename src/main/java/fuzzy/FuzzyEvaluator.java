@@ -1,5 +1,6 @@
-package controller;
+package fuzzy;
 
+import fuzzy.FuzzyStats;
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.FuzzyRuleSet;
 
