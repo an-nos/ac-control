@@ -1,0 +1,65 @@
+FUNCTION_BLOCK
+
+VAR_INPUT
+temperature_level : REAL;
+fan_speed : REAL;
+air_humidity : REAL;
+END_VAR
+VAR_OUTPUT
+fan_acceleration: REAL;
+END_VAR
+
+FUZZIFY temperature_level
+TERM low := (5, 1) (10, 1) (16, 1) (18, 0.50) (20, 0);
+TERM medium := (18, 0.50) (20, 1) (23, 1) (24, 0.5) (25, 0);
+TERM high := (25, 0.50) (26, 1) (30, 1);
+END_FUZZIFY
+
+FUZZIFY fan_speed
+TERM very_low := (20, 1) (30, 1) (40, 1) (50, 0.50) (60, 0) ;
+TERM low := (50, 0) (60, 0.50) (70, 1) (80, 1) (90, 0.50) (100, 0);
+TERM medium := (90, 0) (100, 0.50) (110, 1) (120, 1) (130, 0.50) (140, 0);
+TERM high := (130, 0) (140, 0.50) (150, 1) (160, 1);
+END_FUZZIFY
+
+FUZZIFY air_humidity
+TERM low := (1, 0) (3, 0.50) (5, 1) (7, 1) (9, 0.50) (11, 0);
+TERM medium := (25, 0) (30, 0.50) (35, 0.70) (40, 1) (45, 0.70) (50, 0.50) (55, 0);
+TERM high := (50, 0) (55, 0.50) (60, 1);
+END_FUZZIFY
+
+DEFUZZIFY fan_acceleration
+TERM negative := (-15, 1) (-10, 1) (-5, 0.50) (0, 0);
+TERM zero := (-5, 0) (-2.5, 0.5) (0, 1) (2.5, 0.5) (5, 0);
+TERM positive := (0, 0) (5, 0.50) (10, 1) (15, 1);
+METHOD : COG;
+DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK first
+AND: MIN;
+ACT: MIN;
+
+RULE 0:  IF temperature_level IS low AND fan_speed IS high THEN fan_acceleration IS negative;
+RULE 1:  IF temperature_level IS low AND fan_speed IS medium THEN fan_acceleration IS negative;
+RULE 2:  IF temperature_level IS low AND fan_speed IS low THEN fan_acceleration IS negative;
+RULE 3:  IF temperature_level IS low AND fan_speed IS very_low THEN fan_acceleration IS zero;
+
+RULE 4:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS high THEN fan_acceleration IS negative;
+RULE 5:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS medium THEN fan_acceleration IS zero;
+RULE 6:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS low THEN fan_acceleration IS positive;
+RULE 7:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS very_low THEN fan_acceleration is positive;
+RULE 8:  IF temperature_level IS medium AND air_humidity IS medium THEN fan_acceleration IS zero;
+RULE 9:  IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS high THEN fan_acceleration IS negative;
+RULE 10: IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS medium THEN fan_acceleration IS negative;
+RULE 11: IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS low THEN fan_acceleration IS zero;
+RULE 12: IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS very_low THEN fan_acceleration IS zero;
+
+RULE 13: IF temperature_level IS high AND fan_speed IS high THEN fan_acceleration IS zero;
+RULE 14: IF temperature_level IS high AND fan_speed IS medium THEN fan_acceleration IS positive;
+RULE 15: IF temperature_level IS high AND fan_speed IS low THEN fan_acceleration IS positive;
+RULE 16: IF temperature_level IS high AND fan_speed IS very_low THEN fan_acceleration IS positive;
+
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK

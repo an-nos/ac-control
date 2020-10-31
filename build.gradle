@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repository.ow2.org/nexus/content/repositories/public/"
+    }
+}
+
+javafx {
+    version = '12'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/net.sourceforge.jFuzzyLogic/jFuzzyLogic
+    compile group: 'net.sourceforge.jFuzzyLogic', name: 'jFuzzyLogic', version: '1.+'
+}
+
