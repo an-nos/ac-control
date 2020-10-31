@@ -1,15 +1,19 @@
 package controller;
 
+import java.util.Iterator;
+
 public class FuzzyStats {
 
     private float temperatureLevel;
     private float airHumidity;
     private Fan fan;
+    private Iterator temperatureFlowIterator;
 
     public FuzzyStats(float temperatureLevel, float airHumidity, float fanSpeed){
         this.temperatureLevel = temperatureLevel;
         this.airHumidity = airHumidity;
         this.fan = new Fan(fanSpeed);
+        this.temperatureFlowIterator = (new TemperatureFlow()).iterator();
     }
 
 
@@ -40,6 +44,10 @@ public class FuzzyStats {
     }
 
     public float getFanAcceleration() { return this.fan.getAcceleration(); }
+
+    public void nextTemperature(){
+        this.temperatureLevel = (Float) temperatureFlowIterator.next();
+    }
 
     public void recalculate(){ this.fan.recalculateSpeed(); }
 

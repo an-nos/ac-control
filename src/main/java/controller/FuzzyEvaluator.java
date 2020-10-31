@@ -17,7 +17,7 @@ public class FuzzyEvaluator {
         fis = FIS.load(fileName, false);
 
         fuzzyRuleSet = fis.getFuzzyRuleSet();
-
+//        fuzzyRuleSet.chart();
         evaluate();
 
     }
@@ -30,11 +30,18 @@ public class FuzzyEvaluator {
 
         fuzzyRuleSet.evaluate();
 
-        fuzzyStats.setFanAcceleration((float) fuzzyRuleSet.getVariable("fan_acceleration").getValue());
+        float newAccValue = (float) fuzzyRuleSet.getVariable("fan_acceleration").getLatestDefuzzifiedValue();
 
+        fuzzyStats.setFanAcceleration(newAccValue);
+        System.out.println("Recounted acceleration: " + newAccValue);
+
+        fuzzyStats.nextTemperature();
         fuzzyStats.recalculate();
 
+
     }
+
+    public synchronized float getTemperature() { return fuzzyStats.getTemperatureLevel(); }
 
     public synchronized float getFanSpeed(){
         return fuzzyStats.getFanSpeed();

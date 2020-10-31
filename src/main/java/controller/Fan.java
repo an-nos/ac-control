@@ -4,7 +4,7 @@ public class Fan {
 
     private float speed;
     private float acceleration;
-    private float timeDelta;
+    private float timeDelta = 1.0f;
 
     public Fan(float speed, float acceleration){
         this.speed = speed;

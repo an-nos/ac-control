@@ -22,7 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="first commit" />
+    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/TemperatureFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Fan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Fan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FuzzyEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FuzzyEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FuzzyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FuzzyStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fan.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fuzzy_speed.fcl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fuzzy_speed.fcl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,26 +109,46 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../to/rx-examples" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="ControllerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ControllerApplication" />
       <module name="ac_control.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CounterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.CounterApp" />
+      <module name="ac_control.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,6 +170,12 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.Main" />
       <module name="ac_control.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,39 +193,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ac_control [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.FuzzyExample" />
+      <item itemvalue="Application.Trail" />
+      <item itemvalue="Application.CounterApp" />
       <item itemvalue="Application.ControllerApplication" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Trail" />
-      <item itemvalue="Gradle.ac_control [dependencies]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Trail" />
-        <item itemvalue="Application.FuzzyExample" />
-        <item itemvalue="Gradle.ac_control [dependencies]" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ControllerApplication" />
+        <item itemvalue="Application.CounterApp" />
+        <item itemvalue="Application.Trail" />
+        <item itemvalue="Application.FuzzyExample" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +238,8 @@
       <workItem from="1603701400515" duration="67000" />
       <workItem from="1604088652257" duration="76000" />
       <workItem from="1604152180182" duration="1473000" />
-      <workItem from="1604153667554" duration="51000" />
+      <workItem from="1604153667554" duration="3795000" />
+      <workItem from="1604162557070" duration="8520000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1604152606508</created>
@@ -226,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604152704963</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1604153810354</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604153810354</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,9 +294,10 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="761" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.29.1848.1051@72.29.1848.1051" timestamp="1603493619794" />
-    <state x="804" y="262" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1603552854658">
-      <screen x="72" y="29" width="1848" height="1051" />
+    <state x="804" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1604155564105">
+      <screen x="72" y="26" width="1848" height="1054" />
     </state>
+    <state x="804" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604155564105" />
     <state x="804" y="262" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/72.29.1848.1051@72.29.1848.1051" timestamp="1603552854658" />
     <state x="749" y="422" width="494" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603552767839">
       <screen x="72" y="29" width="1848" height="1051" />
@@ -284,50 +321,58 @@
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
     <state x="751" y="229" width="480" height="654" key="Github.UntrackedFilesDialog/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604152514718" />
-    <state width="1802" height="158" key="GridCell.Tab.0.bottom" timestamp="1604153653166">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="185" key="GridCell.Tab.0.bottom" timestamp="1604171077593">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
-    <state width="1802" height="158" key="GridCell.Tab.0.bottom/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653166" />
-    <state width="1802" height="335" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1603554560622" />
+    <state width="1802" height="237" key="GridCell.Tab.0.bottom/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
+    <state width="1802" height="185" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1604171077593" />
     <state width="1802" height="163" key="GridCell.Tab.0.bottom/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141879" />
-    <state width="1802" height="158" key="GridCell.Tab.0.center" timestamp="1604153653166">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="185" key="GridCell.Tab.0.center" timestamp="1604171077592">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
-    <state width="1802" height="158" key="GridCell.Tab.0.center/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653166" />
-    <state width="1802" height="335" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1603554560622" />
+    <state width="1802" height="237" key="GridCell.Tab.0.center/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
+    <state width="1802" height="185" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1604171077592" />
     <state width="1802" height="163" key="GridCell.Tab.0.center/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="158" key="GridCell.Tab.0.left" timestamp="1604153653166">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="185" key="GridCell.Tab.0.left" timestamp="1604171077591">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
-    <state width="1802" height="158" key="GridCell.Tab.0.left/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653166" />
-    <state width="1802" height="335" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1603554560622" />
+    <state width="1802" height="237" key="GridCell.Tab.0.left/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
+    <state width="1802" height="185" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1604171077591" />
     <state width="1802" height="163" key="GridCell.Tab.0.left/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="158" key="GridCell.Tab.0.right" timestamp="1604153653166">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="185" key="GridCell.Tab.0.right" timestamp="1604171077593">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
-    <state width="1802" height="158" key="GridCell.Tab.0.right/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653166" />
-    <state width="1802" height="335" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1603554560622" />
+    <state width="1802" height="237" key="GridCell.Tab.0.right/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
+    <state width="1802" height="185" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1604171077593" />
     <state width="1802" height="163" key="GridCell.Tab.0.right/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="179" key="GridCell.Tab.1.bottom" timestamp="1604153653164">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="178" key="GridCell.Tab.1.bottom" timestamp="1604169181088">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="179" key="GridCell.Tab.1.bottom/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653164" />
-    <state width="1802" height="179" key="GridCell.Tab.1.center" timestamp="1604153653164">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="178" key="GridCell.Tab.1.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1604169181088" />
+    <state width="1802" height="178" key="GridCell.Tab.1.center" timestamp="1604169181088">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="179" key="GridCell.Tab.1.center/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653164" />
-    <state width="1802" height="179" key="GridCell.Tab.1.left" timestamp="1604153653163">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="178" key="GridCell.Tab.1.center/72.29.1848.1051@72.29.1848.1051" timestamp="1604169181088" />
+    <state width="1802" height="178" key="GridCell.Tab.1.left" timestamp="1604169181088">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="179" key="GridCell.Tab.1.left/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653163" />
-    <state width="1802" height="179" key="GridCell.Tab.1.right" timestamp="1604153653164">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state width="1802" height="178" key="GridCell.Tab.1.left/72.29.1848.1051@72.29.1848.1051" timestamp="1604169181088" />
+    <state width="1802" height="178" key="GridCell.Tab.1.right" timestamp="1604169181088">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="179" key="GridCell.Tab.1.right/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153653164" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604153493842">
+    <state width="1802" height="178" key="GridCell.Tab.1.right/72.29.1848.1051@72.29.1848.1051" timestamp="1604169181088" />
+    <state x="485" y="189" width="1022" height="737" key="SettingsEditor" timestamp="1604164678031">
+      <screen x="72" y="29" width="1848" height="1051" />
+    </state>
+    <state x="485" y="189" width="1022" height="737" key="SettingsEditor/72.29.1848.1051@72.29.1848.1051" timestamp="1604164678031" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604153815388">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153493842" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153815388" />
     <state x="172" y="126" width="1648" height="854" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604153167579">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
@@ -340,5 +385,9 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="522" y="273" width="938" height="654" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/72.29.1848.1051@72.29.1848.1051" timestamp="1603494085139" />
+    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1604167678377">
+      <screen x="72" y="29" width="1848" height="1051" />
+    </state>
+    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup/72.29.1848.1051@72.29.1848.1051" timestamp="1604167678377" />
   </component>
 </project>
