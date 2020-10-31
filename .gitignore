@@ -1,0 +1,6 @@
+# Project exclude paths
+/.gradle/
+/build/
+/build/classes/java/main/
+/src/main/java/controller/FuzzyExample.java
+/src/main/resources/fuzzy_volume.fcl
