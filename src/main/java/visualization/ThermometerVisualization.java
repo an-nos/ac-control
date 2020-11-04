@@ -1,11 +1,13 @@
 package visualization;
 
 import javafx.scene.Group;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.shape.StrokeLineJoin;
+import javafx.scene.text.Font;
 
 public class ThermometerVisualization {
 
@@ -16,14 +18,23 @@ public class ThermometerVisualization {
     private int yPos;
     private int multiplier = 1;
     private Color color;
+    private Label textLabel;
 
-    public ThermometerVisualization(int xPos, int yPos, Color color){
+    public ThermometerVisualization(int xPos, int yPos, Color color, int multiplier){
         int circleRadius = 50;
         int rectangleHeight = 300;
         this.xPos = xPos;
         this.yPos = yPos;
         zeroLevel = circleRadius + rectangleHeight;
         this.color = color;
+        this.multiplier = multiplier;
+
+        this.textLabel = new Label();
+        textLabel.setFont(new Font("Cambria", 35));
+        textLabel.setStyle("-fx-text-fill : white;");
+
+        textLabel.setTranslateX(xPos-20);
+        textLabel.setTranslateY(yPos-15);
 
         Circle circle = new Circle();
         circle.setRadius(circleRadius);
@@ -38,7 +49,7 @@ public class ThermometerVisualization {
 
         Shape thermometerOutline = createThermometerOutline(circle, rectangle);
         thermometerLevel = createThermometerLevel(circleRadius, rectangleHeight, thermometerShape);
-        thermometerGroup = new Group(thermometerLevel, thermometerOutline);
+        thermometerGroup = new Group(thermometerLevel, thermometerOutline, textLabel);
     }
 
 
@@ -70,6 +81,7 @@ public class ThermometerVisualization {
 
     public void setLevel(int level){
         thermometerLevel.setY(zeroLevel - level * multiplier);
+        textLabel.setText(String.valueOf(level));
     }
 
 

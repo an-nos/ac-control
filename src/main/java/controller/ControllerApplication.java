@@ -4,8 +4,12 @@ import fuzzy.FuzzyEvaluator;
 import fuzzy.FuzzyStats;
 import javafx.animation.*;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.concurrent.ScheduledService;
+import javafx.concurrent.Task;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -32,6 +36,19 @@ public class ControllerApplication extends Application {
         fuzzyEvaluator = new FuzzyEvaluator("src/main/resources/fuzzy_speed.fcl", fuzzyStats);
     }
 
+    private ImageView getImageView(int size, String path) throws FileNotFoundException {
+        FileInputStream inputStream = new FileInputStream(path);
+        Image image = new Image(inputStream);
+
+        ImageView fanImageView = new ImageView(image);
+
+        fanImageView.setFitHeight(size);
+        fanImageView.setFitWidth(size);
+        fanImageView.setPreserveRatio(true);
+
+        return fanImageView;
+    }
+
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
 
@@ -39,34 +56,58 @@ public class ControllerApplication extends Application {
 
         primaryStage.setTitle("AC Control");
 
-        FileInputStream inputStream = new FileInputStream("src/main/resources/fan.png");
-        Image image = new Image(inputStream);
+        ImageView fanImageView = getImageView(300, "src/main/resources/fan.png");
 
-        ImageView imageView = new ImageView(image);
+        fanImageView.setX(100);
+        fanImageView.setY(100);
 
-        imageView.setX(100);
-        imageView.setY(100);
+        ThermometerVisualization thermometer = new ThermometerVisualization(575, 400, Color.web("0xC42021"), 6);
+        ThermometerVisualization humidity = new ThermometerVisualization(700, 400, Color.web("0x1C448E"), 2);
 
-        imageView.setFitHeight(300);
-        imageView.setFitWidth(300);
-        imageView.setPreserveRatio(true);
+        Button showChartsButton = new Button("Show charts");
 
-        ThermometerVisualization thermometer = new ThermometerVisualization(575, 400, Color.web("0xC42021"));
-        ThermometerVisualization humidity = new ThermometerVisualization(700, 400, Color.web("0x1C448E"));
+        showChartsButton.setOnAction(value ->
+                fuzzyEvaluator.showChart()
+        );
 
-        Group root = new Group(imageView, thermometer.getThermometerGroup(), humidity.getThermometerGroup());
+        Group root = new Group(fanImageView,
+                thermometer.getThermometerGroup(),
+                humidity.getThermometerGroup(),
+                showChartsButton
+        );
+
         Scene scene = new Scene(root, 800, 600, Color.web("0x6F8695"));
 
 
         primaryStage.setScene(scene);
+
         primaryStage.show();
 
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(rotationTime), (e) -> {
+        ScheduledService<Void> changeFlowService = new ScheduledService<>() {
+            @Override
+            protected Task<Void> createTask() {
+                return new Task<>() {
+                    @Override
+                    protected Void call() throws Exception {
+                        fuzzyEvaluator.nextFlowParameters();
+                        System.out.println("Parameters changed!");
+                        return null;
+                    }
+                };
+            }
+        };
+
+        changeFlowService.setPeriod(Duration.seconds(5));
+
+        changeFlowService.start();
+
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(rotationTime), e -> {
 //                new KeyValue(imageView.rotateProperty(), 360, Interpolator.LINEAR)
                     RotateTransition rotateTransition = new RotateTransition();
 
                     rotateTransition.setDuration(Duration.millis(rotationTime));
-                    rotateTransition.setNode(imageView);
+                    rotateTransition.setNode(fanImageView);
                     rotateTransition.setByAngle(angle);
                     rotateTransition.setInterpolator(Interpolator.LINEAR);
                     rotateTransition.setAutoReverse(false);
@@ -74,10 +115,10 @@ public class ControllerApplication extends Application {
 
                     fuzzyEvaluator.evaluate();
 
+
                     int timeDelta = 1;
 
-                    angle = (int) fuzzyEvaluator.getFanSpeed() * timeDelta +
-                            (int) (fuzzyEvaluator.getFanAcceleration() * timeDelta * timeDelta) / 2;
+                    angle = (int) fuzzyEvaluator.getFanAngleInTime(timeDelta);
                     fuzzyEvaluator.printStats();
 
                     thermometer.setLevel((int) fuzzyEvaluator.getTemperature());
@@ -88,9 +129,11 @@ public class ControllerApplication extends Application {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
+
     }
 
-    //TODO: add thermomether ticks and text labels
+    //TODO: add thermomether ticks
     //TODO: add gauge
+    //TODO: sidebar
 
 }

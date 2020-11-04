@@ -36,6 +36,10 @@ public class Fan {
         this.timeDelta = timeDelta;
     }
 
+    public float getAngleInTime(float time) {
+        return speed * time + acceleration * time * time / 2;
+    }
+
     public void recalculateSpeed(){
         this.speed += this.acceleration * timeDelta;
         if(this.speed < 0) this.speed = 0;

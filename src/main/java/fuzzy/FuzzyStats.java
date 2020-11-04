@@ -55,6 +55,8 @@ public class FuzzyStats {
         this.airHumidity = (float) humidityFlowIterator.next();
     }
 
+    public float getFanAngleInTime(float time) { return fan.getAngleInTime(time); }
+
     public void recalculate(){ this.fan.recalculateSpeed(); }
 
     @Override
