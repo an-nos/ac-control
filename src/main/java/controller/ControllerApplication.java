@@ -8,10 +8,14 @@ import javafx.application.Platform;
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -56,6 +60,13 @@ public class ControllerApplication extends Application {
 
         primaryStage.setTitle("AC Control");
 
+        BorderPane borderPane = new BorderPane();
+        VBox vBox = new VBox();
+        SideBar sideBar = new SideBar(100, 600);
+
+        borderPane.setCenter(vBox);
+        borderPane.setRight(sideBar);
+
         ImageView fanImageView = getImageView(300, "src/main/resources/fan.png");
 
         fanImageView.setX(100);
@@ -76,7 +87,11 @@ public class ControllerApplication extends Application {
                 showChartsButton
         );
 
-        Scene scene = new Scene(root, 800, 600, Color.web("0x6F8695"));
+        vBox.getChildren().addAll(root);
+        vBox.setStyle("-fx-background-color: #6F8695;");
+        vBox.setPrefWidth(800);
+
+        Scene scene = new Scene(borderPane, 900, 600);
 
 
         primaryStage.setScene(scene);
@@ -125,7 +140,7 @@ public class ControllerApplication extends Application {
                     humidity.setLevel((int) fuzzyEvaluator.getAirHumidity());
 
                     System.out.println("The fan turned " + angle + " degrees.");
-                }));
+        }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
@@ -134,6 +149,6 @@ public class ControllerApplication extends Application {
 
     //TODO: add thermomether ticks
     //TODO: add gauge
-    //TODO: sidebar
+    //TODO: add sliders to sidebar
 
 }

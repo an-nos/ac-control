@@ -22,14 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="minor changes">
+    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="added scheduled flow service">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SideBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fuzzy/Fan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fuzzy/Fan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fuzzy/FuzzyStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/visualization/ThermometerVisualization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visualization/ThermometerVisualization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fuzzy_speed.fcl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fuzzy_speed.fcl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +188,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.FuzzyExample" />
       <item itemvalue="Application.Trail" />
@@ -233,7 +240,7 @@
       <workItem from="1604251255636" duration="738000" />
       <workItem from="1604261572912" duration="1823000" />
       <workItem from="1604434923357" duration="801000" />
-      <workItem from="1604526977374" duration="3449000" />
+      <workItem from="1604526977374" duration="5020000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1604152606508</created>
@@ -284,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604184432707</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added scheduled flow service">
+      <created>1604530478567</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604530478567</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +323,8 @@
     <MESSAGE value="added packages + visualization refactoring" />
     <MESSAGE value="air humidity flow added" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="added scheduled flow service" />
+    <option name="LAST_COMMIT_MESSAGE" value="added scheduled flow service" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="132" width="1024" height="852" key="#Project_Structure" timestamp="1603458609631">
@@ -320,11 +335,11 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="761" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.29.1848.1051@72.29.1848.1051" timestamp="1603493619794" />
-    <state x="804" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1604155564105">
-      <screen x="72" y="26" width="1848" height="1054" />
+    <state x="804" y="262" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1604530811452">
+      <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="804" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604155564105" />
-    <state x="804" y="262" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/72.29.1848.1051@72.29.1848.1051" timestamp="1603552854658" />
+    <state x="804" y="262" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/72.29.1848.1051@72.29.1848.1051" timestamp="1604530811452" />
     <state x="749" y="422" width="494" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604179214211">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
@@ -347,29 +362,29 @@
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
     <state x="751" y="229" width="480" height="654" key="Github.UntrackedFilesDialog/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604152514718" />
-    <state width="1802" height="130" key="GridCell.Tab.0.bottom" timestamp="1604530411935">
+    <state width="1802" height="130" key="GridCell.Tab.0.bottom" timestamp="1604531997469">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.bottom/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="130" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1604530411935" />
+    <state width="1802" height="130" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1604531997469" />
     <state width="1802" height="163" key="GridCell.Tab.0.bottom/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141879" />
-    <state width="1802" height="130" key="GridCell.Tab.0.center" timestamp="1604530411934">
+    <state width="1802" height="130" key="GridCell.Tab.0.center" timestamp="1604531997468">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.center/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="130" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1604530411934" />
+    <state width="1802" height="130" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1604531997468" />
     <state width="1802" height="163" key="GridCell.Tab.0.center/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="130" key="GridCell.Tab.0.left" timestamp="1604530411932">
+    <state width="1802" height="130" key="GridCell.Tab.0.left" timestamp="1604531997466">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.left/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="130" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1604530411932" />
+    <state width="1802" height="130" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1604531997466" />
     <state width="1802" height="163" key="GridCell.Tab.0.left/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
-    <state width="1802" height="130" key="GridCell.Tab.0.right" timestamp="1604530411935">
+    <state width="1802" height="130" key="GridCell.Tab.0.right" timestamp="1604531997468">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1802" height="237" key="GridCell.Tab.0.right/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604158253747" />
-    <state width="1802" height="130" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1604530411935" />
+    <state width="1802" height="130" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1604531997468" />
     <state width="1802" height="163" key="GridCell.Tab.0.right/72.448.3768.1051@72.448.3768.1051" timestamp="1603555141878" />
     <state width="1802" height="178" key="GridCell.Tab.1.bottom" timestamp="1604530396949">
       <screen x="72" y="29" width="1848" height="1051" />
@@ -395,11 +410,11 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="485" y="189" width="1022" height="737" key="SettingsEditor/72.29.1848.1051@72.29.1848.1051" timestamp="1604164678031" />
-    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604184440549">
+    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604530483813">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/72.26.1848.1054@72.26.1848.1054" timestamp="1604153815388" />
-    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2/72.29.1848.1051@72.29.1848.1051" timestamp="1604184440549" />
+    <state x="591" y="291" width="800" height="535" key="Vcs.Push.Dialog.v2/72.29.1848.1051@72.29.1848.1051" timestamp="1604530483813" />
     <state x="172" y="126" width="1648" height="854" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604153167579">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
@@ -412,9 +427,9 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="522" y="273" width="938" height="654" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/72.29.1848.1051@72.29.1848.1051" timestamp="1603494085139" />
-    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1604167678377">
+    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1604531622670">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
-    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup/72.29.1848.1051@72.29.1848.1051" timestamp="1604167678377" />
+    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup/72.29.1848.1051@72.29.1848.1051" timestamp="1604531622670" />
   </component>
 </project>
