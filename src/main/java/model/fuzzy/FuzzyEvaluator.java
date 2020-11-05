@@ -1,7 +1,6 @@
 package model.fuzzy;
 
 import javafx.beans.property.FloatProperty;
-import model.fuzzy.FuzzyStats;
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.FuzzyRuleSet;
 

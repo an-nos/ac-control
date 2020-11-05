@@ -1,5 +1,4 @@
 import controller.Controller;
-import model.fuzzy.FuzzyEvaluator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,7 +12,6 @@ public class ControllerApplication extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {
