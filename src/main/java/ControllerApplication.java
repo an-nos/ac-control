@@ -34,6 +34,8 @@ public class ControllerApplication extends Application {
 
         controller.setupFlow();
 
+        controller.setupFlowChange();
+
 
 
         configureStage(primaryStage, borderPane);

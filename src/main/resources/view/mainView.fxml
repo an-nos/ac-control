@@ -11,16 +11,18 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             minHeight="600.0" minWidth="1000.0"
+            stylesheets="css/mainStyle.css"
             fx:controller="controller.Controller">
     <right>
-        <VBox minWidth="100">
+        <VBox styleClass="side-bar" minWidth="100">
             <Button fx:id="showChartsButton" text="Show Charts" onAction="#onShowChartsButtonClicked"/>
+            <Button fx:id="userControlButton" text="Start controlling!" onAction="#onStartControllingButtonClicked"/>
             <Slider fx:id="temperatureSlider"/>
             <Slider fx:id="humiditySlider"/>
         </VBox>
     </right>
     <center>
-        <HBox minWidth="800">
+        <HBox styleClass="main-pane" minWidth="800">
             <ImageView fx:id="fanImageView" fitWidth="300" fitHeight="300" preserveRatio="true" translateX="100" translateY="100"/>
             <Group fx:id="temperatureGroup" translateX="200" translateY="100"/>
             <Group fx:id="humidityGroup" translateX="220" translateY="100"/>

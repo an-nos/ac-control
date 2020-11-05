@@ -1,0 +1,8 @@
+.side-bar{
+    -fx-background-color: #07393C;
+    -fx-padding: 20px;
+}
+
+.main-pane{
+    -fx-background-color: #2C666E;
+}

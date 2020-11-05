@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.concurrent.Worker;
+import javafx.scene.control.Button;
 import model.fuzzy.FuzzyEvaluator;
 import model.fuzzy.FuzzyStats;
 import javafx.animation.*;
@@ -21,7 +23,10 @@ public class Controller {
     private FuzzyEvaluator fuzzyEvaluator;
 
     private ThermometerVisualization temperatureVisualization;
+
     private ThermometerVisualization humidityVisualization;
+
+    private ScheduledService<Void> changeFlowService;
 
 
     @FXML
@@ -33,14 +38,15 @@ public class Controller {
     @FXML
     private Group humidityGroup;
 
-    static int rotationTime = 1000;
-    static int angle = 360;
+    @FXML
+    private Button userControlButton;
+
+    private int rotationTime = 1000;
+    private int angle = 360;
 
 
     @FXML
     public void initialize(){
-
-        startFlowChange();
 
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(rotationTime), e -> {
             RotateTransition rotateTransition = new RotateTransition();
@@ -68,14 +74,22 @@ public class Controller {
 
     }
 
-    private void startFlowChange(){
-        ScheduledService<Void> changeFlowService = new ChangeFlowService(fuzzyEvaluator);
+    public void setupFlowChange(){
+        changeFlowService = new ChangeFlowService(fuzzyEvaluator);
         changeFlowService.setPeriod(Duration.seconds(5));
         changeFlowService.start();
     }
 
+    private void stopFlowChange(){
+        changeFlowService.cancel();
+    }
+
+    private void startFlowChange(){
+        changeFlowService.restart();
+    }
+
     public void fuzzySetup(String path){
-        FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 100, 1);
+        FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 0, 1);
         fuzzyEvaluator = new FuzzyEvaluator(path, fuzzyStats);
     }
 
@@ -101,4 +115,14 @@ public class Controller {
         fuzzyEvaluator.showChart();
     }
 
+    public void onStartControllingButtonClicked(){
+        if(changeFlowService.getState() == Worker.State.CANCELLED){
+            startFlowChange();
+            userControlButton.textProperty().set("Start controlling!");
+        }
+        else{
+            stopFlowChange();
+            userControlButton.textProperty().set("Start auto control");
+        }
+    }
 }

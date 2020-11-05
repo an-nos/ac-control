@@ -11,6 +11,8 @@ public class TemperatureFlow extends FlowIterable {
                 13.0f,
                 14.5f,
                 20.0f,
+                30.0f,
+                30.0f,
                 30.0f
         ));
     }

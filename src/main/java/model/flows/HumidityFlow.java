@@ -12,6 +12,8 @@ public class HumidityFlow extends FlowIterable{
                 30.0f,
                 35.0f,
                 40.0f,
+                45.0f,
+                40.0f,
                 45.0f
         ));
     }

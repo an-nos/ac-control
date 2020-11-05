@@ -6,15 +6,11 @@ import javafx.concurrent.Task;
 
 public class ChangeFlowService extends ScheduledService<Void> {
 
-    FuzzyEvaluator fuzzyEvaluator;
-
-    public ChangeFlowService(FuzzyEvaluator fuzzyEvaluator){
-        this.fuzzyEvaluator = fuzzyEvaluator;
-    }
+    private FuzzyEvaluator fuzzyEvaluator;
 
     @Override
     protected Task<Void> createTask() {
-        return new Task<>() {
+        return new Task<Void>() {
             @Override
             protected Void call() throws Exception {
                 fuzzyEvaluator.nextFlowParameters();
@@ -22,5 +18,14 @@ public class ChangeFlowService extends ScheduledService<Void> {
                 return null;
             }
         };
+    }
+
+    @Override
+    public void start() {
+        super.start();
+    }
+
+    public ChangeFlowService(FuzzyEvaluator fuzzyEvaluator){
+        this.fuzzyEvaluator = fuzzyEvaluator;
     }
 }
