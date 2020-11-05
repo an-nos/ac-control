@@ -3,8 +3,6 @@ package controller;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-
 
 public class SideBar extends StackPane {
 

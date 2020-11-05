@@ -1,4 +1,4 @@
-package visualization;
+package view;
 
 import javafx.scene.Group;
 import javafx.scene.control.Label;
@@ -20,12 +20,15 @@ public class ThermometerVisualization {
     private Color color;
     private Label textLabel;
 
+    private Shape outlineShape;
+
+
     public ThermometerVisualization(int xPos, int yPos, Color color, int multiplier){
         int circleRadius = 50;
         int rectangleHeight = 300;
         this.xPos = xPos;
         this.yPos = yPos;
-        zeroLevel = circleRadius + rectangleHeight;
+        this.zeroLevel = circleRadius + rectangleHeight;
         this.color = color;
         this.multiplier = multiplier;
 
@@ -36,10 +39,7 @@ public class ThermometerVisualization {
         textLabel.setTranslateX(xPos-20);
         textLabel.setTranslateY(yPos-15);
 
-        Circle circle = new Circle();
-        circle.setRadius(circleRadius);
-        circle.setCenterX(xPos);
-        circle.setCenterY(yPos);
+        Circle circle = createThermometerCircle(circleRadius);
 
         Rectangle rectangle = new Rectangle(50, rectangleHeight);
         rectangle.setX(xPos - circleRadius/2);
@@ -47,13 +47,22 @@ public class ThermometerVisualization {
 
         Shape thermometerShape = Shape.union(circle, rectangle);
 
-        Shape thermometerOutline = createThermometerOutline(circle, rectangle);
+        outlineShape = createThermometerOutline(circle, rectangle);
         thermometerLevel = createThermometerLevel(circleRadius, rectangleHeight, thermometerShape);
-        thermometerGroup = new Group(thermometerLevel, thermometerOutline, textLabel);
+
+        thermometerGroup = new Group(thermometerLevel, outlineShape, textLabel);
+    }
+
+    public Circle createThermometerCircle(int circleRadius){
+        Circle circle = new Circle();
+        circle.setRadius(circleRadius);
+        circle.setCenterX(xPos);
+        circle.setCenterY(yPos);
+        return circle;
     }
 
 
-    private Rectangle createThermometerLevel(int circleRadius, int rectangleHeight, Shape thermometerShape){
+    public Rectangle createThermometerLevel(int circleRadius, int rectangleHeight, Shape thermometerShape){
         Rectangle thermometerLevel = new Rectangle(200, circleRadius + rectangleHeight);
         thermometerLevel.setX(xPos - 100);
         thermometerLevel.setY(zeroLevel);
@@ -62,7 +71,7 @@ public class ThermometerVisualization {
         return thermometerLevel;
     }
 
-    private Shape createThermometerOutline(Circle thermometerCircle, Rectangle thermometerRectangle){
+    public Shape createThermometerOutline(Circle thermometerCircle, Rectangle thermometerRectangle){
         Shape thermometerOutline = Shape.union(thermometerCircle, thermometerRectangle);
         thermometerOutline.setStroke(Color.web("0x2F2504"));
         thermometerOutline.setStrokeWidth(4);

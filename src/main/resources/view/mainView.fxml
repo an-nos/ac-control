@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import controller.SideBar?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            minHeight="600.0" minWidth="1000.0"
+            fx:controller="controller.Controller">
+    <right>
+        <VBox minWidth="100">
+            <Button fx:id="showChartsButton" text="Show Charts" onAction="#onShowChartsButtonClicked"/>
+            <Slider fx:id="temperatureSlider"/>
+            <Slider fx:id="humiditySlider"/>
+        </VBox>
+    </right>
+    <center>
+        <HBox minWidth="800">
+            <ImageView fx:id="fanImageView" fitWidth="300" fitHeight="300" preserveRatio="true" translateX="100" translateY="100"/>
+            <Group fx:id="temperatureGroup" translateX="200" translateY="100"/>
+            <Group fx:id="humidityGroup" translateX="220" translateY="100"/>
+        </HBox>
+    </center>
+
+</BorderPane>
