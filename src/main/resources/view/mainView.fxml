@@ -18,9 +18,9 @@
             <Button fx:id="showChartsButton" text="Show charts" onAction="#onShowChartsButtonClicked"/>
             <Button fx:id="userControlButton" text="Start controlling!" onAction="#onStartControllingButtonClicked"/>
             <TextField text="Temperature:"/>
-            <Slider fx:id="temperatureSlider" showTickMarks="true" max="40"/>
+            <Slider fx:id="temperatureSlider" max="40"/>
             <TextField text="Air humidity:"/>
-            <Slider fx:id="humiditySlider" showTickMarks="true" majorTickUnit="10"/>
+            <Slider fx:id="humiditySlider" majorTickUnit="10"/>
         </VBox>
     </right>
     <center>

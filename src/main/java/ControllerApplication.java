@@ -1,6 +1,5 @@
 import controller.Controller;
 import model.fuzzy.FuzzyEvaluator;
-import model.fuzzy.FuzzyStats;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,8 +8,6 @@ import javafx.stage.Stage;
 
 
 public class ControllerApplication extends Application {
-
-    private static FuzzyEvaluator fuzzyEvaluator;
 
 
     public static void main(String[] args) {
@@ -36,8 +33,6 @@ public class ControllerApplication extends Application {
 
         controller.setupFlowChange();
 
-
-
         configureStage(primaryStage, borderPane);
         primaryStage.show();
 
@@ -50,8 +45,8 @@ public class ControllerApplication extends Application {
         primaryStage.setTitle("AC Control");
     }
 
-    //TODO: add thermomether ticks
-    //TODO: add gauge
-    //TODO: add sliders to sidebar
+    //TODO: maybe add speed control for user
+    //TODO: consider setting FuzzyStats a parameter of Controller
+    //TODO: consider breaking Controller into smaller classes
 
 }

@@ -10,6 +10,8 @@
 
 .slider{
     -fx-padding: 8px;
+    -fx-show-tick-marks: true;
+    -fx-show-tick-labels: true;
 }
 
 .text-field{
