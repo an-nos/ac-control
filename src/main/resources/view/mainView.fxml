@@ -14,11 +14,13 @@
             stylesheets="css/mainStyle.css"
             fx:controller="controller.Controller">
     <right>
-        <VBox styleClass="side-bar" minWidth="100">
-            <Button fx:id="showChartsButton" text="Show Charts" onAction="#onShowChartsButtonClicked"/>
+        <VBox styleClass="side-bar" minWidth="100" alignment="TOP_CENTER">
+            <Button fx:id="showChartsButton" text="Show charts" onAction="#onShowChartsButtonClicked"/>
             <Button fx:id="userControlButton" text="Start controlling!" onAction="#onStartControllingButtonClicked"/>
-            <Slider fx:id="temperatureSlider"/>
-            <Slider fx:id="humiditySlider"/>
+            <TextField text="Temperature:"/>
+            <Slider fx:id="temperatureSlider" showTickMarks="true" max="40"/>
+            <TextField text="Air humidity:"/>
+            <Slider fx:id="humiditySlider" showTickMarks="true" majorTickUnit="10"/>
         </VBox>
     </right>
     <center>

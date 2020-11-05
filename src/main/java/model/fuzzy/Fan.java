@@ -9,6 +9,7 @@ public class Fan {
     public Fan(float speed, float timeDelta){
         this.speed = speed;
         this.timeDelta = timeDelta;
+        this.acceleration = 0.0f;
     }
 
     public Fan(float speed){

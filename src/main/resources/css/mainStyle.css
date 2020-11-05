@@ -1,8 +1,29 @@
 .side-bar{
-    -fx-background-color: #07393C;
+    -fx-background-color: #1D1128;
     -fx-padding: 20px;
+    -fx-font-size: 15;
 }
 
 .main-pane{
-    -fx-background-color: #2C666E;
+    -fx-background-color: #8D7BB2;
+}
+
+.slider{
+    -fx-padding: 8px;
+}
+
+.text-field{
+    -fx-padding: 8px;
+    -fx-background-color: #1D1128;
+    -fx-text-fill: #ffffff;
+}
+
+.button{
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-label-padding: 10px;
+    -fx-padding: 8px;
+    -fx-border-insets: 8px;
+    -fx-background-insets: 8px;
 }

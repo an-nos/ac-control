@@ -1,5 +1,6 @@
 package model.fuzzy;
 
+import javafx.beans.property.FloatProperty;
 import model.fuzzy.FuzzyStats;
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.FuzzyRuleSet;
@@ -57,6 +58,9 @@ public class FuzzyEvaluator {
 
     public synchronized float getFanAngleInTime(float time) { return fuzzyStats.getFanAngleInTime(time);}
 
+    public synchronized FloatProperty getTemperatureProperty(){ return fuzzyStats.getTemperatureProperty(); }
+
+    public synchronized FloatProperty getAirHumidityProperty(){ return fuzzyStats.getAirHumidityProperty(); }
 
     public synchronized void printStats(){
         System.out.println("================ CURRENT STATS ================");

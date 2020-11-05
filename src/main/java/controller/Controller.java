@@ -2,6 +2,7 @@ package controller;
 
 import javafx.concurrent.Worker;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import model.fuzzy.FuzzyEvaluator;
 import model.fuzzy.FuzzyStats;
 import javafx.animation.*;
@@ -41,8 +42,15 @@ public class Controller {
     @FXML
     private Button userControlButton;
 
+    @FXML
+    private Slider temperatureSlider;
+
+    @FXML
+    private Slider humiditySlider;
+
+
     private int rotationTime = 1000;
-    private int angle = 360;
+    private int angle = 0;
 
 
     @FXML
@@ -89,7 +97,7 @@ public class Controller {
     }
 
     public void fuzzySetup(String path){
-        FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 0, 1);
+        FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 10, 1);
         fuzzyEvaluator = new FuzzyEvaluator(path, fuzzyStats);
     }
 
@@ -119,10 +127,18 @@ public class Controller {
         if(changeFlowService.getState() == Worker.State.CANCELLED){
             startFlowChange();
             userControlButton.textProperty().set("Start controlling!");
+
+            fuzzyEvaluator.getTemperatureProperty().unbind();
+            fuzzyEvaluator.getAirHumidityProperty().unbind();
+
         }
         else{
             stopFlowChange();
             userControlButton.textProperty().set("Start auto control");
+
+            fuzzyEvaluator.getTemperatureProperty().bind(temperatureSlider.valueProperty());
+            fuzzyEvaluator.getAirHumidityProperty().bind(humiditySlider.valueProperty());
+
         }
     }
 }
