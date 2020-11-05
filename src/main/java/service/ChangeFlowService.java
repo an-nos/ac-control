@@ -1,6 +1,6 @@
-package animation;
+package service;
 
-import fuzzy.FuzzyEvaluator;
+import model.fuzzy.FuzzyEvaluator;
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 

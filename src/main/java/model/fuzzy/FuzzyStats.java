@@ -1,7 +1,7 @@
-package fuzzy;
+package model.fuzzy;
 
-import flows.HumidityFlow;
-import flows.TemperatureFlow;
+import model.flows.HumidityFlow;
+import model.flows.TemperatureFlow;
 
 import java.util.Iterator;
 

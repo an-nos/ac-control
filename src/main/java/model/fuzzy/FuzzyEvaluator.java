@@ -1,6 +1,6 @@
-package fuzzy;
+package model.fuzzy;
 
-import fuzzy.FuzzyStats;
+import model.fuzzy.FuzzyStats;
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.FuzzyRuleSet;
 

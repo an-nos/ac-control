@@ -1,4 +1,4 @@
-package flows;
+package model.flows;
 
 import java.util.Iterator;
 import java.util.List;

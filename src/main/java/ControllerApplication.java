@@ -1,25 +1,11 @@
 import controller.Controller;
-import controller.SideBar;
-import fuzzy.FuzzyEvaluator;
-import fuzzy.FuzzyStats;
-import javafx.animation.*;
+import model.fuzzy.FuzzyEvaluator;
+import model.fuzzy.FuzzyStats;
 import javafx.application.Application;
-import javafx.concurrent.ScheduledService;
-import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import view.ThermometerVisualization;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 
 public class ControllerApplication extends Application {

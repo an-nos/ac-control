@@ -1,4 +1,4 @@
-package fuzzy;
+package model.fuzzy;
 
 public class Fan {
 

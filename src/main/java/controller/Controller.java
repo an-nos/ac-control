@@ -1,7 +1,7 @@
 package controller;
 
-import fuzzy.FuzzyEvaluator;
-import fuzzy.FuzzyStats;
+import model.fuzzy.FuzzyEvaluator;
+import model.fuzzy.FuzzyStats;
 import javafx.animation.*;
 import javafx.concurrent.ScheduledService;
 import javafx.fxml.FXML;
@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import animation.ChangeFlowService;
+import service.ChangeFlowService;
 import view.ThermometerVisualization;
 
 import java.io.FileInputStream;
