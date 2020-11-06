@@ -61,6 +61,8 @@ public class FuzzyEvaluator {
 
     public synchronized FloatProperty getAirHumidityProperty(){ return fuzzyStats.getAirHumidityProperty(); }
 
+    public synchronized FloatProperty getSpeedProperty() { return fuzzyStats.getSpeedProperty(); }
+
     public synchronized void printStats(){
         System.out.println("================ CURRENT STATS ================");
         System.out.println(fuzzyStats.toString());

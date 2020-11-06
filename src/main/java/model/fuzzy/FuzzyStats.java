@@ -44,6 +44,8 @@ public class FuzzyStats {
         this.fan.setSpeed(fanSpeed);
     }
 
+    public FloatProperty getSpeedProperty(){ return fan.getSpeedProperty(); }
+
     public float getFanSpeed(){ return this.fan.getSpeed(); }
 
     public void setFanAcceleration(float fanAcceleration){

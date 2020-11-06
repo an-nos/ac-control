@@ -12,6 +12,7 @@
     -fx-padding: 8px;
     -fx-show-tick-marks: true;
     -fx-show-tick-labels: true;
+    /*-fx-tick-label-fill: #ffffff;*/
 }
 
 .text-field{

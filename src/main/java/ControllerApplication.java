@@ -43,7 +43,6 @@ public class ControllerApplication extends Application {
         primaryStage.setTitle("AC Control");
     }
 
-    //TODO: maybe add speed control for user
     //TODO: consider setting FuzzyStats a parameter of Controller
     //TODO: consider breaking Controller into smaller classes
 

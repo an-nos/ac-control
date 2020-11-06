@@ -3,6 +3,8 @@ package controller;
 import javafx.concurrent.Worker;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import model.fuzzy.FuzzyEvaluator;
 import model.fuzzy.FuzzyStats;
 import javafx.animation.*;
@@ -24,7 +26,6 @@ public class Controller {
     private FuzzyEvaluator fuzzyEvaluator;
 
     private ThermometerVisualization temperatureVisualization;
-
     private ThermometerVisualization humidityVisualization;
 
     private ScheduledService<Void> changeFlowService;
@@ -48,6 +49,12 @@ public class Controller {
     @FXML
     private Slider humiditySlider;
 
+    @FXML
+    private Slider fanSpeedSlider;
+
+    @FXML
+    private VBox slidersVBox;
+
 
     private int rotationTime = 1000;
     private int angle = 0;
@@ -55,6 +62,7 @@ public class Controller {
 
     @FXML
     public void initialize(){
+
 
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(rotationTime), e -> {
             RotateTransition rotateTransition = new RotateTransition();
@@ -118,6 +126,10 @@ public class Controller {
         humidityGroup.getChildren().add(humidityVisualization.getThermometerGroup());
 
     }
+    
+    private void changeSlidersVisibility(){
+        slidersVBox.setVisible(!slidersVBox.isVisible());
+    }
 
     public void onShowChartsButtonClicked(){
         fuzzyEvaluator.showChart();
@@ -130,15 +142,19 @@ public class Controller {
 
             fuzzyEvaluator.getTemperatureProperty().unbind();
             fuzzyEvaluator.getAirHumidityProperty().unbind();
+            fuzzyEvaluator.getSpeedProperty().unbindBidirectional(fanSpeedSlider.valueProperty());
 
         }
         else{
+
             stopFlowChange();
             userControlButton.textProperty().set("Start auto control");
 
             fuzzyEvaluator.getTemperatureProperty().bind(temperatureSlider.valueProperty());
             fuzzyEvaluator.getAirHumidityProperty().bind(humiditySlider.valueProperty());
+            fuzzyEvaluator.getSpeedProperty().bindBidirectional(fanSpeedSlider.valueProperty());
 
         }
+        changeSlidersVisibility();
     }
 }

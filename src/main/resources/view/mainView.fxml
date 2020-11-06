@@ -7,19 +7,24 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            minHeight="600.0" minWidth="1000.0"
+            minHeight="550.0" minWidth="1000.0"
             stylesheets="css/mainStyle.css"
             fx:controller="controller.Controller">
     <right>
         <VBox styleClass="side-bar" minWidth="100" alignment="TOP_CENTER">
             <Button fx:id="showChartsButton" text="Show charts" onAction="#onShowChartsButtonClicked"/>
             <Button fx:id="userControlButton" text="Start controlling!" onAction="#onStartControllingButtonClicked"/>
-            <TextField text="Temperature:"/>
-            <Slider fx:id="temperatureSlider" max="40"/>
-            <TextField text="Air humidity:"/>
-            <Slider fx:id="humiditySlider" majorTickUnit="10"/>
+            <VBox fx:id="slidersVBox" visible="false">
+                <TextField text="Temperature:"/>
+                <Slider fx:id="temperatureSlider" max="40"/>
+                <TextField text="Air humidity:"/>
+                <Slider fx:id="humiditySlider" majorTickUnit="10"/>
+                <TextField text="Fan speed:"/>
+                <Slider fx:id="fanSpeedSlider" max="720"/>
+            </VBox>
         </VBox>
     </right>
     <center>
