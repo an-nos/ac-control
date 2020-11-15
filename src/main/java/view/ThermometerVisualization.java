@@ -36,7 +36,7 @@ public class ThermometerVisualization {
         textLabel.setFont(new Font("Cambria", 35));
         textLabel.setStyle("-fx-text-fill : white;");
 
-        textLabel.setTranslateX(xPos-20);
+        textLabel.setTranslateX(xPos-25);
         textLabel.setTranslateY(yPos-15);
 
         Circle circle = createThermometerCircle(circleRadius);

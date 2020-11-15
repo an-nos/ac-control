@@ -23,7 +23,7 @@
                 <TextField text="Air humidity:"/>
                 <Slider fx:id="humiditySlider" majorTickUnit="10"/>
                 <TextField text="Fan speed:"/>
-                <Slider fx:id="fanSpeedSlider" max="720"/>
+                <Slider fx:id="fanSpeedSlider" max="400"/>
             </VBox>
         </VBox>
     </right>
