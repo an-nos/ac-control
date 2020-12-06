@@ -44,6 +44,5 @@ public class Fan {
 
     public void recalculateSpeed(){
         setSpeed(getSpeed() + acceleration * timeDelta);
-        if(getSpeed() < 0) setSpeed(0);
     }
 }

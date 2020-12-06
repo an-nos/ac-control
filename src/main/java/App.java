@@ -23,7 +23,7 @@ public class App extends Application {
 
         Controller controller = loader.getController();
 
-        controller.fuzzySetup("src/main/resources/fuzzy_speed.fcl");
+        controller.setupFuzzy("src/main/resources/fuzzy_speed.fcl");
 
         controller.setupFanImage("src/main/resources/fan.png");
 
@@ -43,7 +43,5 @@ public class App extends Application {
         primaryStage.setTitle("AC Control");
     }
 
-    //TODO: consider setting FuzzyStats a parameter of Controller
-    //TODO: consider breaking Controller into smaller classes
 
 }

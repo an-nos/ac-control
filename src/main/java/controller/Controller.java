@@ -104,7 +104,7 @@ public class Controller {
         changeFlowService.restart();
     }
 
-    public void fuzzySetup(String path){
+    public void setupFuzzy(String path){
         FuzzyStats fuzzyStats = new FuzzyStats(10, 40, 10, 1);
         fuzzyEvaluator = new FuzzyEvaluator(path, fuzzyStats);
     }
