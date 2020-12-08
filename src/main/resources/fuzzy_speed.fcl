@@ -52,7 +52,7 @@ RULEBLOCK first
     RULE 5:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS medium THEN fan_acceleration IS zero;
     RULE 6:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS low THEN fan_acceleration IS positive;
     RULE 7:  IF temperature_level IS medium AND air_humidity IS high AND fan_speed IS very_low THEN fan_acceleration IS positive;
-    RULE 8:  IF temperature_level IS medium AND air_humidity IS medium THEN fan_acceleration IS zero;
+    RULE 8:  IF temperature_level IS medium AND air_humidity IS medium THEN fan_acceleration IS negative;
     RULE 9:  IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS high THEN fan_acceleration IS negative;
     RULE 10: IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS medium THEN fan_acceleration IS negative;
     RULE 11: IF temperature_level IS medium AND air_humidity IS low AND fan_speed IS low THEN fan_acceleration IS zero;

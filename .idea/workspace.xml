@@ -22,13 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="changed max speed on slider">
-      <change afterPath="$PROJECT_DIR$/.idea/ac_control.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="4187ac76-f298-43aa-a031-9b9c8df5217a" name="Default Changelist" comment="minor changes">
+      <change beforePath="$PROJECT_DIR$/.idea/ac_control.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ac_control.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/fuzzy/Fan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/fuzzy/Fan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fuzzy_speed.fcl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fuzzy_speed.fcl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +241,12 @@
       <workItem from="1605646096655" duration="13000" />
       <workItem from="1605696073427" duration="11000" />
       <workItem from="1606607738424" duration="631000" />
-      <workItem from="1607298267131" duration="333000" />
+      <workItem from="1607298267131" duration="485000" />
+      <workItem from="1607336021127" duration="24000" />
+      <workItem from="1607362677806" duration="4707000" />
+      <workItem from="1607392411451" duration="9000" />
+      <workItem from="1607428230753" duration="3410000" />
+      <workItem from="1607454974338" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1604152606508</created>
@@ -354,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605440316662</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="minor changes">
+      <created>1607298738978</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607298738978</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +391,6 @@
     <MESSAGE value="added thermometer and fixed acceleration" />
     <MESSAGE value="added packages + visualization refactoring" />
     <MESSAGE value="air humidity flow added" />
-    <MESSAGE value="minor changes" />
     <MESSAGE value="added scheduled flow service" />
     <MESSAGE value="major refactoring" />
     <MESSAGE value="packet changes" />
@@ -388,6 +400,7 @@
     <MESSAGE value="optimized imports, deleted SideBar class" />
     <MESSAGE value="speed slider added" />
     <MESSAGE value="changed max speed on slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed max speed on slider" />
+    <MESSAGE value="minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
   </component>
 </project>
